@@ -8,9 +8,9 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 namespace Students_Management
 {
-    public partial class Form1 : Form
+    public class AddForm : Form
     {
-        public Form1()
+        public AddForm()
         {
             InitializeComponent();
         }

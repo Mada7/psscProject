@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Students_Management
 {
-    public class Student
+    public class Student : AddForm
     {
         private int _id;
         private int _age;
@@ -39,5 +39,17 @@ namespace Students_Management
         public int PhoneNo { get { return _phoneNo; } }
         public string Email { get { return _email; } }
         public string Sex { get { return _sex; } }
+
+        private void addStudent(Student std) 
+        {
+           
+        }
+
+        private void deleteStudent(Student std)
+        {
+
+        }
+
     }
+    
 }
