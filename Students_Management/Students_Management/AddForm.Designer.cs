@@ -46,6 +46,8 @@
             this.ID_textBox = new System.Windows.Forms.TextBox();
             this.email_label = new System.Windows.Forms.Label();
             this.cancel_button = new System.Windows.Forms.Button();
+            this.age_label = new System.Windows.Forms.Label();
+            this.age_textBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // addButton
@@ -75,21 +77,21 @@
             // 
             // regNo_textBox
             // 
-            this.regNo_textBox.Location = new System.Drawing.Point(114, 188);
+            this.regNo_textBox.Location = new System.Drawing.Point(114, 217);
             this.regNo_textBox.Name = "regNo_textBox";
             this.regNo_textBox.Size = new System.Drawing.Size(296, 22);
             this.regNo_textBox.TabIndex = 3;
             // 
             // phone_textBox
             // 
-            this.phone_textBox.Location = new System.Drawing.Point(114, 216);
+            this.phone_textBox.Location = new System.Drawing.Point(114, 245);
             this.phone_textBox.Name = "phone_textBox";
             this.phone_textBox.Size = new System.Drawing.Size(296, 22);
             this.phone_textBox.TabIndex = 4;
             // 
             // email_textBox
             // 
-            this.email_textBox.Location = new System.Drawing.Point(114, 244);
+            this.email_textBox.Location = new System.Drawing.Point(114, 273);
             this.email_textBox.Name = "email_textBox";
             this.email_textBox.Size = new System.Drawing.Size(296, 22);
             this.email_textBox.TabIndex = 5;
@@ -107,7 +109,7 @@
             this.gender_comboBox.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.gender_comboBox.Location = new System.Drawing.Point(114, 272);
+            this.gender_comboBox.Location = new System.Drawing.Point(114, 301);
             this.gender_comboBox.Name = "gender_comboBox";
             this.gender_comboBox.Size = new System.Drawing.Size(87, 24);
             this.gender_comboBox.TabIndex = 7;
@@ -151,7 +153,7 @@
             // regNo_label
             // 
             this.regNo_label.AutoSize = true;
-            this.regNo_label.Location = new System.Drawing.Point(-2, 191);
+            this.regNo_label.Location = new System.Drawing.Point(-2, 220);
             this.regNo_label.Name = "regNo_label";
             this.regNo_label.Size = new System.Drawing.Size(110, 17);
             this.regNo_label.TabIndex = 12;
@@ -160,7 +162,7 @@
             // phoneNo_label
             // 
             this.phoneNo_label.AutoSize = true;
-            this.phoneNo_label.Location = new System.Drawing.Point(33, 219);
+            this.phoneNo_label.Location = new System.Drawing.Point(33, 248);
             this.phoneNo_label.Name = "phoneNo_label";
             this.phoneNo_label.Size = new System.Drawing.Size(75, 17);
             this.phoneNo_label.TabIndex = 13;
@@ -169,7 +171,7 @@
             // sex_label
             // 
             this.sex_label.AutoSize = true;
-            this.sex_label.Location = new System.Drawing.Point(77, 275);
+            this.sex_label.Location = new System.Drawing.Point(77, 304);
             this.sex_label.Name = "sex_label";
             this.sex_label.Size = new System.Drawing.Size(31, 17);
             this.sex_label.TabIndex = 14;
@@ -185,7 +187,7 @@
             // email_label
             // 
             this.email_label.AutoSize = true;
-            this.email_label.Location = new System.Drawing.Point(66, 247);
+            this.email_label.Location = new System.Drawing.Point(66, 276);
             this.email_label.Name = "email_label";
             this.email_label.Size = new System.Drawing.Size(42, 17);
             this.email_label.TabIndex = 16;
@@ -201,11 +203,30 @@
             this.cancel_button.UseVisualStyleBackColor = true;
             this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
             // 
-            // Form1
+            // age_label
+            // 
+            this.age_label.AutoSize = true;
+            this.age_label.Location = new System.Drawing.Point(75, 191);
+            this.age_label.Name = "age_label";
+            this.age_label.Size = new System.Drawing.Size(33, 17);
+            this.age_label.TabIndex = 18;
+            this.age_label.Text = "Age";
+            this.age_label.UseWaitCursor = true;
+            // 
+            // age_textBox
+            // 
+            this.age_textBox.Location = new System.Drawing.Point(114, 188);
+            this.age_textBox.Name = "age_textBox";
+            this.age_textBox.Size = new System.Drawing.Size(87, 22);
+            this.age_textBox.TabIndex = 19;
+            // 
+            // AddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 434);
+            this.Controls.Add(this.age_textBox);
+            this.Controls.Add(this.age_label);
             this.Controls.Add(this.cancel_button);
             this.Controls.Add(this.email_label);
             this.Controls.Add(this.ID_textBox);
@@ -224,7 +245,7 @@
             this.Controls.Add(this.address_textBox);
             this.Controls.Add(this.name_textBox);
             this.Controls.Add(this.addButton);
-            this.Name = "Form1";
+            this.Name = "AddForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -234,13 +255,13 @@
         #endregion
 
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.TextBox name_textBox;
-        private System.Windows.Forms.TextBox address_textBox;
-        private System.Windows.Forms.TextBox regNo_textBox;
-        private System.Windows.Forms.TextBox phone_textBox;
-        private System.Windows.Forms.TextBox email_textBox;
-        private System.Windows.Forms.TextBox cnp_textBox;
-        private System.Windows.Forms.ComboBox gender_comboBox;
+        public  System.Windows.Forms.TextBox name_textBox;
+        public  System.Windows.Forms.TextBox address_textBox;
+        public System.Windows.Forms.TextBox regNo_textBox;
+        public  System.Windows.Forms.TextBox phone_textBox;
+        public  System.Windows.Forms.TextBox email_textBox;
+        public  System.Windows.Forms.TextBox cnp_textBox;
+        public  System.Windows.Forms.ComboBox gender_comboBox;
         private System.Windows.Forms.Label id_label;
         private System.Windows.Forms.Label name_label;
         private System.Windows.Forms.Label address_label;
@@ -251,6 +272,8 @@
         private System.Windows.Forms.TextBox ID_textBox;
         private System.Windows.Forms.Label email_label;
         private System.Windows.Forms.Button cancel_button;
+        private System.Windows.Forms.Label age_label;
+        public  System.Windows.Forms.TextBox age_textBox;
     }
 }
 
