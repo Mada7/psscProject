@@ -17,7 +17,7 @@ namespace Students_Management
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cancel_button_Click(object sender, EventArgs e)
