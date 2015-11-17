@@ -3,27 +3,57 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace Students_Management
 {
-    class Secretariat : Student 
+    class Secretariat : IRepository 
     {
-        private void addStudent(Student std)
+
+        private readonly ArrayList _students;
+        public Secretariat()
         {
-            std.Name = name_textBox.ToString();
-            std.Age = Convert.ToInt16(age_textBox);
-            std.Address = address_textBox.ToString();
-            std.CNP = cnp_textBox.ToString();
-            std.RegNo =Convert.ToInt16(regNo_textBox);
-            std.PhoneNo = Convert.ToInt32(phone_textBox);
-            std.Email = email_textBox.ToString();
-            std.Sex = gender_comboBox.ToString();       
+            _students = new ArrayList();
         }
-        
+
+        public ArrayList List
+        {
+            get { return _students; }
+        }
+
+        public void AddStudent(Student entity)
+        {
+            _students.Add(entity);
+        }
+
+        public void UpdateStudentInfo(Student entity)
+        {
+            var studIndex = _students.IndexOf(entity);
+            var studToUpdate = _students[studIndex] as Student;
+            if (studToUpdate != null)
+            {
+                var newUser = (Student)entity;
+                studToUpdate.Name = newUser.Name;
+                studToUpdate.Age = newUser.Age;
+                studToUpdate.Address = newUser.Address;
+                studToUpdate.CNP = newUser.CNP;
+                studToUpdate.RegNo = newUser.RegNo;
+                studToUpdate.PhoneNo = newUser.PhoneNo;
+                studToUpdate.Sex = newUser.Sex;
+                studToUpdate.Grades = newUser.Grades;
+            }
+            else
+            {
+                throw new Exception("User not found");
+            }
+        }
+
+
+
           private void addProfInfo(Professor prof)
         {
-            prof.Name = " ";
-            prof.Course = " ";
+            prof.Name = "";
+            prof.Course = "";
         }
 
      }

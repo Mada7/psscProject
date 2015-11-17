@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Students_Management
 {
-    class Professor
+    class Professor 
     {
+        public Professor()
+        {
+            Id = Guid.NewGuid();
+        }
+        public Guid Id { get; private set; }
         public string Name { get; set; }
         public string Course { get; set; }
 
@@ -15,9 +20,10 @@ namespace Students_Management
         {
      
         }
-        private void submitGrades()
-        {
 
+        public void submitGrades()
+        {
+           
         }
     }
 }
