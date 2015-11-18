@@ -4,57 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Diagnostics.Contracts;
 
 namespace Students_Management
 {
-    class Secretariat : IRepository 
+    public class Coeficient
     {
+        private int _numarator;
+        private int _numitor;
 
-        private readonly ArrayList _students;
-        public Secretariat()
+        public decimal Fractie { get { return (decimal)_numarator / (decimal)_numitor; } }
+
+        internal Coeficient(int numarator, int numitor)
         {
-            _students = new ArrayList();
+            Contract.Requires<ArgumentException>(numarator > 0);
+            Contract.Requires<ArgumentException>(numitor > 0);
+            Contract.Requires<ArgumentException>(numitor > numarator);
+
+            _numitor = numitor;
+            _numarator = numarator;
         }
-
-        public ArrayList List
-        {
-            get { return _students; }
-        }
-
-        public void AddStudent(Student entity)
-        {
-            _students.Add(entity);
-        }
-
-        public void UpdateStudentInfo(Student entity)
-        {
-            var studIndex = _students.IndexOf(entity);
-            var studToUpdate = _students[studIndex] as Student;
-            if (studToUpdate != null)
-            {
-                var newUser = (Student)entity;
-                studToUpdate.Name = newUser.Name;
-                studToUpdate.Age = newUser.Age;
-                studToUpdate.Address = newUser.Address;
-                studToUpdate.CNP = newUser.CNP;
-                studToUpdate.RegNo = newUser.RegNo;
-                studToUpdate.PhoneNo = newUser.PhoneNo;
-                studToUpdate.Sex = newUser.Sex;
-                studToUpdate.Grades = newUser.Grades;
-            }
-            else
-            {
-                throw new Exception("User not found");
-            }
-        }
-
-
-
-          private void addProfInfo(Professor prof)
-        {
-            prof.Name = "";
-            prof.Course = "";
-        }
-
-     }
+    }
 }

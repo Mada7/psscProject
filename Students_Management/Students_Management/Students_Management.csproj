@@ -71,7 +71,8 @@
     <Compile Include="AddForm.Designer.cs">
       <DependentUpon>AddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Catalogue.cs" />
+    <Compile Include="Grades.cs" />
+    <Compile Include="Grade.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,7 +89,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Secretariat.cs" />
-    <Compile Include="Student.cs" />
+    <Compile Include="Student.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="studentForm.cs">
       <SubType>Form</SubType>
     </Compile>
