@@ -21,9 +21,4 @@ namespace Students_Management
      
         }
 
-        public void submitGrades()
-        {
-           
-        }
-    }
 }

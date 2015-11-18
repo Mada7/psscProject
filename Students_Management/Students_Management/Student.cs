@@ -36,15 +36,6 @@ namespace Students_Management
             var valCoeficient = coeficient.Fractie;
             finalGrade = new Grade(Math.Round(valCoeficient * examGrade.GradeValue + (1 - valCoeficient) * activityGrades.calculateAverage.GradeValue));
         }
-
-        public void displayCourseOffers()
-        { }
-
-        private void registerforCourse()
-        { }
-
-        private void saveSchedule()
-        { }
        
     }
 

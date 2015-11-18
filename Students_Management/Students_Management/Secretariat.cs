@@ -8,6 +8,13 @@ using System.Diagnostics.Contracts;
 
 namespace Students_Management
 {
+    public enum CourseStatus
+    {
+        Started,
+        OnGoing,
+        Done
+    }
+
     public class Coeficient
     {
         private int _numarator;
@@ -24,5 +31,38 @@ namespace Students_Management
             _numitor = numitor;
             _numarator = numarator;
         }
+    }
+
+    public class handleCourse
+    {
+        public string CourseName { get; set; }
+        public Coeficient ExamBalance { get; set; }
+        public CourseStatus Status { get; set; }
+        public Courses Courses { get; set; }
+
+        private List<Student> _submittedStudents;
+        public IReadOnlyCollection<Student> SubmittedStudents { get { return _submittedStudents; } }
+
+        internal handleCourse ( string name, Coeficient balance)
+        {
+            CourseName = name;
+            ExamBalance = balance;
+            _submittedStudents = new List<Student>();
+            Status = CourseStatus.Started;
+            Courses = new Courses();
+        }
+
+        internal handleCourse(string name,Coeficient balance, List<Student> submittedStuds)
+            :this(name,balance)
+        {
+            Contract.Requires(submittedStuds != null);
+            _submittedStudents = submittedStuds;
+        }
+
+        public void registerStudent(Student student)
+        { }
+
+        public void submitGrades(Student student, Grade grade)
+        { }
     }
 }

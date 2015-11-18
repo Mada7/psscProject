@@ -71,6 +71,7 @@
     <Compile Include="AddForm.Designer.cs">
       <DependentUpon>AddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Course.cs" />
     <Compile Include="Grades.cs" />
     <Compile Include="Grade.cs" />
     <Compile Include="LoginForm.cs">
