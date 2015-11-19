@@ -31,7 +31,7 @@ namespace Students_Management
            activityGrades = new Grades();
        }
 
-        internal void calculateFinalGrade(Coeficient coeficient)
+        internal void calcFinalGrade(Coeficient coeficient)
         {
             var valCoeficient = coeficient.Fractie;
             finalGrade = new Grade(Math.Round(valCoeficient * examGrade.GradeValue + (1 - valCoeficient) * activityGrades.calculateAverage.GradeValue));

@@ -21,5 +21,10 @@ namespace Students_Management
         {
             Application.Exit();
         }
+
+        private void grades_button_Click(object sender, EventArgs e)
+        {
+            //function call to show all courses and grades 
+        }
     }
 }

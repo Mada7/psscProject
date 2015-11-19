@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Students_Management
 {
-    class Professor 
+    class Professor
     {
         public Professor()
         {
@@ -18,7 +18,8 @@ namespace Students_Management
 
         private void selectCourseToTeach()
         {
-     
+
         }
 
+    }
 }

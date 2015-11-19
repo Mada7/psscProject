@@ -19,14 +19,18 @@ namespace Students_Management
 
         private void submit_button_Click(object sender, EventArgs e)
         {
-            Professor prof = new Professor();
-            prof.submitGrades();
+           
+           handleCourse course = new handleCourse(courseName_textBox.ToString(),null); // TDO : add coeficient from form
+                                                                                       // convert coef_numericUpDown to coeficient type
+            course.submitGrades(null, null); //TDO : fine-tuning 
         }
 
         private void close_button_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+   
 
     }
 }

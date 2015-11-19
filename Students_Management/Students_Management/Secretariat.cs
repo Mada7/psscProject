@@ -10,7 +10,7 @@ namespace Students_Management
 {
     public enum CourseStatus
     {
-        Started,
+        Starting,
         OnGoing,
         Done
     }
@@ -48,7 +48,7 @@ namespace Students_Management
             CourseName = name;
             ExamBalance = balance;
             _submittedStudents = new List<Student>();
-            Status = CourseStatus.Started;
+            Status = CourseStatus.Starting;
             Courses = new Courses();
         }
 
@@ -60,9 +60,26 @@ namespace Students_Management
         }
 
         public void registerStudent(Student student)
-        { }
+        {
+            Contract.Requires(Status == CourseStatus.Starting);
+            var tempRegister = _submittedStudents.FirstOrDefault(s => s.Equals(student));
+            if(tempRegister == null)
+            {
+                _submittedStudents.Add(student);
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
 
-        public void submitGrades(Student student, Grade grade)
-        { }
+        public void submitGrades(Student student, Coeficient balance)
+        { 
+            foreach (var stud in _submittedStudents)
+            {
+                stud.calcFinalGrade(balance);
+            }
+        }
+                
     }
 }
